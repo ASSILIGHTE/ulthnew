@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kejutan Ulang Tahun Spesial Untukmu ♡</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Kejutan Ulang Tahun Spesial Untukmu ♡">
+    <meta name="description" content="Sebuah ungkapan kasih manis & kenangan indah yang khusus ku-persembahkan untukmu di hari spesialmu... ♡">
+
+    <!-- Open Graph / WhatsApp / Facebook Link Preview Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kejutan Ulang Tahun Spesial Untukmu ♡">
+    <meta property="og:description" content="Sebuah ungkapan kasih manis & kenangan indah yang khusus ku-persembahkan untukmu di hari spesialmu... ♡">
+    <meta property="og:image" content="photos/photo1.jpg">
+    <meta property="og:image:secure_url" content="photos/photo1.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Foto Kenangan Ulang Tahun">
+
+    <!-- Twitter Card Link Preview Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kejutan Ulang Tahun Spesial Untukmu ♡">
+    <meta name="twitter:description" content="Sebuah ungkapan kasih manis & kenangan indah yang khusus ku-persembahkan untukmu di hari spesialmu... ♡">
+    <meta name="twitter:image" content="photos/photo1.jpg">
+
+    <!-- Favicon & Touch Icon Preview -->
+    <link rel="icon" href="photos/photo1.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="photos/photo1.jpg">
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Canvas Confetti Library for Surprise Finale -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Background Noise & Particle Canvas -->
+    <div class="bg-overlay">
+        <div class="bg-noise"></div>
+    </div>
+
+
+
+    <canvas id="particles-canvas"></canvas>
+    <div id="floating-hearts-container" class="floating-hearts-container"></div>
+    <div id="flash-overlay" class="flash-overlay"></div>
+
+    <!-- Main Workspace Container -->
+    <div class="app-container">
+
+        <!-- Cute Scrapbook Frame -->
+        <div class="cute-scrapbook-wrapper">
+            <!-- Washi Tape Strips -->
+            <div class="washi-tape washi-tape-top-left"></div>
+            <div class="washi-tape washi-tape-top-right"></div>
+            <div class="washi-tape washi-tape-bottom-right"></div>
+
+            <!-- Cute Corner Stickers -->
+            <div class="cute-sticker sticker-top-left">🎀</div>
+            <div class="cute-sticker sticker-top-right">🌸</div>
+            <div class="cute-sticker sticker-bottom-left">💖</div>
+            <div class="cute-sticker sticker-bottom-right">✨</div>
+
+            <!-- Main Frame Card Container -->
+            <div class="cute-scrapbook-card">
+                
+                <!-- Window Top Navigation Bar -->
+                <div class="window-header">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <button id="global-back-btn" class="nav-back-btn" style="display: none;" title="Kembali">←</button>
+                        <div class="window-controls">
+                            <span class="dot dot-close"></span>
+                            <span class="dot dot-min"></span>
+                            <span class="dot dot-max"></span>
+                        </div>
+                    </div>
+                    <div class="window-title">Kenangan Indah Bersamamu ♡</div>
+                    <div style="width: 36px;"></div> <!-- Spacer -->
+                </div>
+
+                <!-- =======================================================
+                     VIEW 1: OPENING / WELCOME SCREEN
+                     ======================================================= -->
+                <section id="view-opening" class="view-section active">
+                    <div class="opening-card">
+                        <h1 class="handwritten-title" id="opening-title">Selamat Ulang Tahun</h1>
+                        <p id="opening-subtitle" class="opening-subtitle">
+                            Ungkapan kasih manis yang kupersembahkan khusus untukmu... ♡
+                        </p>
+
+                        <!-- Hand-drawn Cake Doodle SVG -->
+                        <div class="cake-illustration-wrapper">
+                            <svg class="doodle-cake-svg" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Dish/Plate Base -->
+                                <ellipse cx="100" cy="135" rx="85" ry="18" fill="#e0f2fe" stroke="#181818" stroke-width="3.5"/>
+                                <!-- Cake Body -->
+                                <path d="M 25 110 C 25 130, 175 130, 175 110 L 175 80 C 175 80, 100 95, 25 80 Z" fill="#ffb7c5" stroke="#181818" stroke-width="3.5" stroke-linejoin="round"/>
+                                <!-- Cake Top Surface -->
+                                <ellipse cx="100" cy="80" rx="75" ry="20" fill="#fff0f3" stroke="#181818" stroke-width="3.5"/>
+                                <!-- Crust Rim Pattern -->
+                                <path d="M 30 78 Q 40 86 50 78 Q 60 86 70 78 Q 80 86 90 78 Q 100 86 110 78 Q 120 86 130 78 Q 140 86 150 78 Q 160 86 170 78" stroke="#181818" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <!-- Berries / Cherries on Top -->
+                                <circle cx="85" cy="72" r="7" fill="#ff4757"/>
+                                <circle cx="98" cy="68" r="8.5" fill="#a55eea"/>
+                                <circle cx="112" cy="73" r="7.5" fill="#ff9f43"/>
+                                <circle cx="92" cy="78" r="6" fill="#26de81"/>
+                                <circle cx="105" cy="77" r="6.5" fill="#ff6b81"/>
+                                <!-- Candle -->
+                                <rect x="96" y="38" width="8" height="28" rx="2" fill="#ffd166" stroke="#181818" stroke-width="2.5"/>
+                                <path d="M 100 38 Q 96 28 100 20 Q 104 28 100 38 Z" fill="#ff4757" stroke="#181818" stroke-width="2"/>
+                                <!-- Sparkles -->
+                                <path d="M 75 30 L 80 30 M 77 25 L 77 35" stroke="#ff9f43" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M 120 32 L 125 32 M 122.5 27 L 122.5 37" stroke="#ff6b81" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+
+                        <!-- Dynamic Live Countdown Ticker to October 24, 2026 -->
+                        <div class="opening-countdown-box">
+                            <span class="countdown-mini-label">⏳ Hitung Mundur 24 Oktober 2026:</span>
+                            <div class="countdown-ticker-wrapper">
+                                <div class="timer-box">
+                                    <span id="cnt-days" class="timer-num">00</span>
+                                    <span class="timer-label">HARI</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-box">
+                                    <span id="cnt-hours" class="timer-num">00</span>
+                                    <span class="timer-label">JAM</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-box">
+                                    <span id="cnt-minutes" class="timer-num">00</span>
+                                    <span class="timer-label">MENIT</span>
+                                </div>
+                                <span class="timer-colon">:</span>
+                                <div class="timer-box">
+                                    <span id="cnt-seconds" class="timer-num">00</span>
+                                    <span class="timer-label">DETIK</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="btn-continue" class="btn-primary" style="margin-top: 8px;">
+                            BUKA KEJUTAN →
+                        </button>
+                    </div>
+                </section>
+
+                <!-- =======================================================
+                     VIEW 2: MAIN MENU
+                     ======================================================= -->
+                <section id="view-menu" class="view-section">
+                    <div class="menu-header">
+                        <h2 class="menu-title" id="menu-title">Hal Yang Ku-persiapkan Untukmu</h2>
+                        <p class="menu-subtitle" id="menu-subtitle">Setiap sudut di sini menyimpan ungkapan rasa sayangku... ♡</p>
+                    </div>
+
+                    <div class="menu-grid">
+                        <!-- Option 1: Song -->
+                        <div class="menu-card" id="card-song">
+                            <div class="menu-icon-wrapper">
+                                <!-- Headphones SVG Doodle -->
+                                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+                                    <path d="M 18 48 C 18 24 62 24 62 48" stroke="#181818" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                    <!-- Left Ear Pad -->
+                                    <rect x="10" y="42" width="14" height="24" rx="7" fill="#ffffff" stroke="#181818" stroke-width="3.5"/>
+                                    <!-- Right Ear Pad -->
+                                    <rect x="56" y="42" width="14" height="24" rx="7" fill="#ffffff" stroke="#181818" stroke-width="3.5"/>
+                                    <!-- Sound waves -->
+                                    <path d="M 4 48 Q 1 54 4 60" stroke="#181818" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                    <path d="M 76 48 Q 79 54 76 60" stroke="#181818" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                </svg>
+                            </div>
+                            <span class="menu-label">Lagu Spesial</span>
+                        </div>
+
+                        <!-- Option 2: Photo -->
+                        <div class="menu-card" id="card-photo">
+                            <div class="menu-icon-wrapper">
+                                <!-- Polaroid Camera SVG Doodle -->
+                                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+                                    <rect x="10" y="22" width="60" height="46" rx="8" fill="#ffffff" stroke="#181818" stroke-width="3.5"/>
+                                    <rect x="18" y="14" width="20" height="8" rx="3" fill="#ffffff" stroke="#181818" stroke-width="3"/>
+                                    <circle cx="40" cy="45" r="15" fill="#ffffff" stroke="#181818" stroke-width="3.5"/>
+                                    <circle cx="40" cy="45" r="8" fill="#181818"/>
+                                    <circle cx="58" cy="30" r="3.5" fill="#181818"/>
+                                    <!-- Photo ejecting bottom slot -->
+                                    <path d="M 20 68 L 60 68 L 56 76 L 24 76 Z" fill="#ffffff" stroke="#181818" stroke-width="2.5"/>
+                                </svg>
+                            </div>
+                            <span class="menu-label">Foto Kenangan</span>
+                        </div>
+
+                        <!-- Option 3: Message -->
+                        <div class="menu-card" id="card-message">
+                            <div class="menu-icon-wrapper">
+                                <!-- Envelope with Hearts SVG Doodle -->
+                                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+                                    <rect x="10" y="28" width="60" height="42" rx="6" fill="#ffffff" stroke="#181818" stroke-width="3.5"/>
+                                    <path d="M 10 28 L 40 50 L 70 28" stroke="#181818" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    <!-- Floating Hearts -->
+                                    <path d="M 22 18 C 22 14, 16 14, 16 18 C 16 22, 22 25, 22 27 C 22 25, 28 22, 28 18 C 28 14, 22 14, 22 18 Z" fill="#ff6b81" stroke="#181818" stroke-width="1.5"/>
+                                    <path d="M 58 14 C 58 11, 53 11, 53 14 C 53 17, 58 19, 58 21 C 58 19, 63 17, 63 14 C 63 11, 58 11, 58 14 Z" fill="#ff6b81" stroke="#181818" stroke-width="1.5" transform="scale(0.85) translate(10, 2)"/>
+                                </svg>
+                            </div>
+                            <span class="menu-label">Surat Cinta</span>
+                        </div>
+
+                        <!-- Option 4: Roda Cinta -->
+                        <div class="menu-card" id="card-game">
+                            <div class="menu-icon-wrapper">
+                                <!-- Spin Wheel SVG Doodle -->
+                                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+                                    <circle cx="40" cy="42" r="28" fill="#ffffff" stroke="#181818" stroke-width="3.5"/>
+                                    <circle cx="40" cy="42" r="6" fill="#ff6b81" stroke="#181818" stroke-width="2"/>
+                                    <!-- Wheel Spoke Lines -->
+                                    <path d="M 40 14 L 40 70 M 12 42 L 68 42 M 20 22 L 60 62 M 20 62 L 60 22" stroke="#181818" stroke-width="2.5" stroke-linecap="round"/>
+                                    <!-- Top Pointer Arrow -->
+                                    <path d="M 40 6 L 46 14 L 34 14 Z" fill="#ff6b81" stroke="#181818" stroke-width="2" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <span class="menu-label">Roda Cinta</span>
+                        </div>
+                    </div>
+
+                    <!-- Grand Finale Trigger Area -->
+                    <div class="surprise-trigger-wrapper">
+                        <p class="surprise-prompt-text" id="surprise-prompt">Ada satu rahasia manis dari hatiku...</p>
+                        <button id="btn-open-surprise" class="btn-primary">
+                            LIHAT KEJUTAN UTAMA ♡
+                        </button>
+                    </div>
+                </section>
+
+                <!-- =======================================================
+                     VIEW 3: PHOTO / MEMORIES SCRAPBOOK
+                     ======================================================= -->
+                <section id="view-photos" class="view-section">
+                    <h2 class="page-title" id="photos-title">Momen-Momen Manis Kita</h2>
+                    
+                    <div class="gallery-grid" id="gallery-grid">
+                        <!-- Populated dynamically via script.js -->
+                    </div>
+
+                    <button class="btn-primary nav-back-to-menu-btn">KEMBALI</button>
+                </section>
+
+                <!-- =======================================================
+                     VIEW 4: MUSIC PLAYER
+                     ======================================================= -->
+                <section id="view-song" class="view-section">
+                    <div class="player-container">
+                        <!-- Album Art Cover -->
+                        <div class="album-art-wrapper" id="album-art-box">
+                            <img id="player-cover-img" class="album-cover-img" src="" alt="Album Cover">
+                        </div>
+
+                        <!-- Track Info -->
+                        <div class="track-info">
+                            <h3 id="player-title" class="track-title">Lagu Spesial Untukmu ♡</h3>
+                            <p id="player-artist" class="track-artist">Melodi Indah Kita</p>
+                        </div>
+
+                        <!-- Equalizer Visualizer -->
+                        <div class="equalizer-anim" id="equalizer-bar">
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                        </div>
+
+                        <!-- Interactive Progress Bar -->
+                        <div class="progress-box">
+                            <div class="progress-bar-container" id="progress-container">
+                                <div class="progress-bar-fill" id="progress-fill"></div>
+                            </div>
+                            <div class="time-stamps">
+                                <span id="time-current">0:00</span>
+                                <span id="time-total">0:00</span>
+                            </div>
+                        </div>
+
+                        <!-- Retro Controls -->
+                        <div class="player-controls">
+                            <button class="ctrl-btn" id="btn-favorite" title="Sukai">♡</button>
+                            <button class="ctrl-btn" id="btn-prev" title="Sebelumnya">|◄</button>
+                            <button class="ctrl-btn play-btn" id="btn-play" title="Putar / Jeda">▶</button>
+                            <button class="ctrl-btn" id="btn-next" title="Selanjutnya">►|</button>
+                            <button class="ctrl-btn" id="btn-add" title="Tambah">⊕</button>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 24px;">
+                        <button class="btn-primary nav-back-to-menu-btn">KEMBALI</button>
+                    </div>
+                </section>
+
+                <!-- =======================================================
+                     VIEW 5: BIRTHDAY LETTER
+                     ======================================================= -->
+                <section id="view-message" class="view-section">
+                    <div class="letter-card">
+                        
+                        <!-- Top Right Playing Cards Doodle SVG -->
+                        <svg class="letter-decor-top-right" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#181818" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+                                <!-- Card 1 -->
+                                <rect x="8" y="10" width="28" height="42" rx="4" fill="#ffffff" transform="rotate(-15 8 10)"/>
+                                <text x="12" y="24" font-size="10" font-weight="bold" fill="#181818" transform="rotate(-15 8 10)">10</text>
+                                <!-- Card 2 -->
+                                <rect x="22" y="12" width="28" height="42" rx="4" fill="#ffffff" transform="rotate(-4 22 12)"/>
+                                <text x="26" y="26" font-size="10" font-weight="bold" fill="#181818" transform="rotate(-4 22 12)">J</text>
+                                <!-- Card 3 -->
+                                <rect x="36" y="14" width="28" height="42" rx="4" fill="#ffffff" transform="rotate(10 36 14)"/>
+                                <text x="40" y="28" font-size="10" font-weight="bold" fill="#181818" transform="rotate(10 36 14)">♡</text>
+                            </g>
+                        </svg>
+
+                        <!-- Letter Header -->
+                        <h2 class="letter-salutation" id="letter-salutation">Untukmu yang Terkasih, [Nama]</h2>
+
+                        <!-- Typewriter Animated Body -->
+                        <div class="letter-body" id="letter-body-text">
+                            <!-- Typewriter text injected via script -->
+                        </div>
+
+                        <!-- Bottom Left Toasting Wine Glasses Doodle SVG -->
+                        <svg class="letter-decor-bottom-left" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#181818" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                                <!-- Glass 1 -->
+                                <path d="M 14 18 L 26 18 L 24 34 Q 20 40 14 34 Z" fill="#ffffff"/>
+                                <path d="M 20 38 L 20 54"/>
+                                <path d="M 12 54 L 28 54"/>
+                                <!-- Glass 2 -->
+                                <path d="M 44 18 L 56 18 L 54 34 Q 48 40 44 34 Z" fill="#ffffff"/>
+                                <path d="M 50 38 L 50 54"/>
+                                <path d="M 42 54 L 58 54"/>
+                                <!-- Clink Sparkles -->
+                                <path d="M 35 12 L 35 22 M 30 17 L 40 17" stroke="#181818" stroke-width="2"/>
+                            </g>
+                        </svg>
+
+                        <!-- Signature -->
+                        <div class="letter-signature">
+                            <div class="signature-valediction">dengan penuh rasa sayang,</div>
+                            <div class="signature-name" id="signature-name-text">[Nama Pengirim] ♡</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 24px;">
+                        <button class="btn-primary nav-back-to-menu-btn">KEMBALI</button>
+                    </div>
+                </section>
+
+                <!-- =======================================================
+                     VIEW 6: CUTE SPIN WHEEL CINTA
+                     ======================================================= -->
+                <section id="view-game" class="view-section">
+                    <h2 class="page-title" id="game-title">Roda Keberuntungan Cinta 🎡💖</h2>
+                    <p class="menu-subtitle" style="margin-top: -12px; margin-bottom: 16px;">
+                        Putar rodanya dan dapatkan kalimat & kejutan romantis khusus buat kamu!
+                    </p>
+
+                    <div class="wheel-game-wrapper">
+                        <!-- Wheel Container with Pointer -->
+                        <div class="wheel-container">
+                            <div class="wheel-pointer">🔻</div>
+                            <canvas id="wheel-canvas" width="340" height="340"></canvas>
+                            <button id="wheel-spin-center-btn" class="wheel-center-btn">
+                                <span>PUTAR!</span>
+                                <span style="font-size: 0.9rem;">🎯</span>
+                            </button>
+                        </div>
+
+                        <!-- Spin Control Button & Status -->
+                        <div class="wheel-actions">
+                            <button id="btn-spin-wheel" class="btn-primary wheel-spin-btn">
+                                PUTAR RODA CINTA! 🎯
+                            </button>
+                            <p id="wheel-status-text" class="wheel-status-text">
+                                Putar rodanya dan temukan pesan manis dari hatiku! 💕
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <button class="btn-primary nav-back-to-menu-btn">KEMBALI</button>
+                    </div>
+                </section>
+
+            </div><!-- .cute-scrapbook-card -->
+        </div><!-- .cute-scrapbook-wrapper -->
+
+    </div><!-- .app-container -->
+
+    <!-- =======================================================
+         PHOTO DETAIL MODAL
+         ======================================================= -->
+    <div id="photo-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">✕</button>
+            <img id="modal-img" class="modal-img" src="" alt="Foto Kenangan">
+            <h3 id="modal-caption" class="modal-caption"></h3>
+            <p id="modal-detail" class="modal-detail"></p>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         GRAND FINALE SURPRISE MODAL
+         ======================================================= -->
+    <div id="finale-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <button id="finale-close" class="modal-close-btn">✕</button>
+            <div class="finale-card">
+                <div class="finale-photo-wrapper">
+                    <img id="finale-photo" src="" alt="Surprise Photo">
+                </div>
+                <h2 id="finale-heading" class="finale-title">SELAMAT ULANG TAHUN!</h2>
+                <p id="finale-message" class="finale-text"></p>
+                <button id="finale-done-btn" class="btn-primary" style="margin-top: 8px;">
+                    TERIMA KASIH ♡
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         MINI GAME REWARD ROMANTIC CARD MODAL
+         ======================================================= -->
+    <div id="reward-modal" class="modal-overlay">
+        <div class="modal-content reward-modal-content">
+            <button id="reward-close" class="modal-close-btn">✕</button>
+            <div class="reward-card">
+                <!-- Cute Ribbon Badge -->
+                <div class="reward-badge">💖 KARTU KEJUTAN CINTA 💌</div>
+                
+                <h2 id="reward-heading" class="reward-title">HADIAH SPESIAL UNTUKMU! 🎉</h2>
+
+                <!-- Main Romantic Gift Display Card (Cute Scrapbook Card Style) -->
+                <div class="love-gift-card">
+                    <div class="love-gift-header">
+                        <span id="reward-gift-icon" class="love-gift-icon">🎁</span>
+                        <span id="reward-gift-tag" class="love-gift-tag">SPESIAL ULANG TAHUN</span>
+                    </div>
+
+                    <div class="love-gift-body">
+                        <p id="reward-won-text" class="love-gift-quote">
+                            "Garansi pelukan hangat gratis 24 jam sehari untukmu, berlaku selamanya! 🤗💕"
+                        </p>
+                    </div>
+
+                    <div class="love-gift-footer">
+                        <span class="love-sparkles">✨ ♡ ✨</span>
+                    </div>
+                </div>
+
+                <p id="reward-sender-note" class="reward-note">
+                    📌 *Simpan & tunjukkan pesan manis ini ke aku kapan aja ya! 💕*
+                </p>
+
+                <div class="reward-action-row">
+                    <button id="reward-claim-btn" class="btn-primary">
+                        SIMPAN PESAN 💝
+                    </button>
+                    <button id="reward-replay-btn" class="btn-primary" style="background: #fff; font-size: 1.35rem;">
+                        PUTAR LAGI 🎡
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================
+         CUTE SCRAPBOOK LOADING SCREEN OVERLAY
+         ======================================================= -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-card">
+            <div class="loading-icon-spinner">🎂</div>
+            <h3 id="loading-title" class="loading-title">Menyiapkan Kejutan Manis...</h3>
+            <p id="loading-status-text" class="loading-status">Memuat foto kenangan & lagu romantis ♡</p>
+            
+            <div class="loading-bar-wrapper">
+                <div id="loading-bar-fill" class="loading-bar-fill"></div>
+            </div>
+            
+            <div class="loading-sparkles">✨ ♡ ✨</div>
+        </div>
+    </div>
+
+    <!-- Background HTML5 Audio Element -->
+    <audio id="bg-audio" preload="auto"></audio>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
