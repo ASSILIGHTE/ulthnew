@@ -118,11 +118,12 @@ html, body {
    BINGKAI SCRAPBOOK LUCU (CUTE SCRAPBOOK FRAME)
    ================================================================= */
 .cute-scrapbook-wrapper {
-    width: 100%;
+    width: min(920px, 95vw);
     max-width: 920px;
     position: relative;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 /* Decorative Washi Tape Strips on Frame Corners */
@@ -177,9 +178,10 @@ html, body {
 /* Screen Content Box (Cute Scrapbook Card Container) */
 .cute-scrapbook-card {
     width: 100%;
-    min-height: 560px;
+    min-height: min(580px, 82vh);
+    max-height: 90vh;
     background-color: var(--card-bg);
-    border-radius: 32px;
+    border-radius: clamp(20px, 4vw, 32px);
     overflow: hidden;
     position: relative;
     border: var(--border-width) solid var(--border-color);
@@ -254,12 +256,12 @@ html, body {
 .view-section {
     display: none;
     flex: 1;
-    padding: 28px 24px;
+    padding: clamp(16px, 3.5vw, 28px);
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     overflow-y: auto;
-    max-height: 75vh;
+    max-height: calc(88vh - 56px);
     opacity: 0;
     transform: scale(0.98);
     transition: opacity 0.35s ease, transform 0.35s ease;
@@ -1641,17 +1643,23 @@ html, body {
 /* Tablet & Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
     .app-container {
-        padding: 12px 10px;
+        padding: 10px 6px;
+    }
+
+    .cute-scrapbook-wrapper {
+        width: 98vw;
     }
 
     .cute-scrapbook-card {
-        min-height: auto;
-        border-radius: 22px;
+        min-height: calc(100vh - 20px);
+        max-height: calc(100vh - 20px);
+        border-radius: 20px;
+        box-shadow: 5px 5px 0px #181818;
     }
 
     .view-section {
-        padding: 20px 14px;
-        max-height: 82vh;
+        padding: 16px 12px;
+        max-height: calc(100vh - 74px);
     }
 
     .gallery-grid {
