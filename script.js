@@ -348,80 +348,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // TYPOGRAPHY ANIMATION SYSTEM (PER PAGE)
+    // ROCK-SOLID TYPOGRAPHY ANIMATION SYSTEM
     // -------------------------------------------------------------
-    function animateTypography(element, mode = 'char') {
+    function animateTypography(element) {
         if (!element) return;
-        
-        if (!element.dataset.rawText) {
-            element.dataset.rawText = element.textContent.trim();
-        }
-        const text = element.dataset.rawText;
-        element.innerHTML = '';
-
-        if (mode === 'char') {
-            const words = text.split(' ');
-            let globalCharIdx = 0;
-
-            words.forEach((wordText, wIdx) => {
-                const wordWrapper = document.createElement('span');
-                wordWrapper.className = 'typo-word-wrapper';
-
-                const characters = Array.from(wordText);
-                characters.forEach((char) => {
-                    const charSpan = document.createElement('span');
-                    charSpan.className = 'typo-char';
-                    charSpan.textContent = char;
-                    charSpan.style.setProperty('--char-idx', globalCharIdx);
-                    
-                    const rotAngle = ((globalCharIdx % 5) - 2) * 2.5;
-                    charSpan.style.setProperty('--rand-rot', `${rotAngle}deg`);
-
-                    wordWrapper.appendChild(charSpan);
-                    globalCharIdx++;
-                });
-
-                element.appendChild(wordWrapper);
-
-                if (wIdx < words.length - 1) {
-                    element.appendChild(document.createTextNode(' '));
-                }
-            });
-        } else if (mode === 'word') {
-            const words = text.split(' ');
-            words.forEach((wordText, wIdx) => {
-                const wordSpan = document.createElement('span');
-                wordSpan.className = 'typo-word';
-                wordSpan.textContent = wordText;
-                wordSpan.style.setProperty('--word-idx', wIdx);
-                element.appendChild(wordSpan);
-
-                if (wIdx < words.length - 1) {
-                    element.appendChild(document.createTextNode(' '));
-                }
-            });
-        }
+        element.classList.remove('animate-typo-enter');
+        void element.offsetWidth; // Force CSS reflow to re-trigger animation cleanly
+        element.classList.add('animate-typo-enter');
     }
 
     function triggerViewTypography(viewName) {
         if (viewName === 'opening') {
-            animateTypography(document.getElementById('opening-title'), 'char');
-            animateTypography(document.getElementById('opening-subtitle'), 'word');
+            animateTypography(document.getElementById('opening-title'));
+            animateTypography(document.getElementById('opening-subtitle'));
             startCountdownTimer();
         } else if (viewName === 'menu') {
-            animateTypography(document.getElementById('menu-title'), 'char');
-            animateTypography(document.getElementById('menu-subtitle'), 'word');
-            animateTypography(document.getElementById('surprise-prompt'), 'word');
+            animateTypography(document.getElementById('menu-title'));
+            animateTypography(document.getElementById('menu-subtitle'));
+            animateTypography(document.getElementById('surprise-prompt'));
         } else if (viewName === 'photos') {
-            animateTypography(document.getElementById('photos-title'), 'char');
+            animateTypography(document.getElementById('photos-title'));
         } else if (viewName === 'song') {
-            animateTypography(document.getElementById('player-title'), 'char');
-            animateTypography(document.getElementById('player-artist'), 'word');
+            animateTypography(document.getElementById('player-title'));
+            animateTypography(document.getElementById('player-artist'));
         } else if (viewName === 'message') {
-            animateTypography(document.getElementById('letter-salutation'), 'char');
-            animateTypography(document.getElementById('signature-name-text'), 'word');
+            animateTypography(document.getElementById('letter-salutation'));
+            animateTypography(document.getElementById('signature-name-text'));
         } else if (viewName === 'game') {
-            animateTypography(document.getElementById('game-title'), 'char');
+            animateTypography(document.getElementById('game-title'));
             initWheelGame();
         }
     }
